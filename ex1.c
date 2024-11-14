@@ -1,11 +1,11 @@
 /******************
-Name:
-ID:
-Assignment:
+Name:Maor Ophir
+ID:315144063
+Assignment:1
 *******************/
 #include <stdio.h>
 
-// REMIDER : YOU CANT USE ANY CONTROL FLOW OPERATIONS OR FUNCTIONS, ONLY BITWISE.
+// REMINDER : YOU CANT USE ANY CONTROL FLOW OPERATIONS OR FUNCTIONS, ONLY BITWISE.
 
 int main() {
   
@@ -13,7 +13,19 @@ int main() {
   printf("What bit:\n");
   /*Scan two integers (representing number and a position)
   Print the bit in this position. */
-  
+  unsigned int num, position, bit;
+  printf("Please enter a number:\n");
+  scanf("%u", &num);
+  printf("Please enter a position:\n");
+  scanf("%u", &position);
+  int numsaver = num;
+  num = num << (31 - position);
+  printf("After left shift the number is :%u\n", num);
+  num = num >> 31;
+  printf("After right shift the number is :%u\n", num);
+  bit = num;
+  printf("The bit in position %u of number %d is %u\n", position, numsaver, bit);
+  return 0;
   // Set bit
   printf("\nSet bit:\n");
   /*Scan two integers (representing number and a position)
