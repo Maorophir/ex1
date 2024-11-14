@@ -13,19 +13,19 @@ int main() {
   printf("What bit:\n");
   /*Scan two integers (representing number and a position)
   Print the bit in this position. */
-  unsigned int num, position, bit;
-  printf("Please enter a number:\n");
-  scanf("%u", &num);
-  printf("Please enter a position:\n");
-  scanf("%u", &position);
-  int numsaver = num;
-  num = num << (31 - position);
-  printf("After left shift the number is :%u\n", num);
-  num = num >> 31;
-  printf("After right shift the number is :%u\n", num);
-  bit = num;
-  printf("The bit in position %u of number %d is %u\n", position, numsaver, bit);
+  const int POSITIONS = 31;
+  int num, position;
+  printf("Please enter a number\n");
+  scanf("%d",&num);
+  printf("Please enter a position\n");
+  scanf("%d",&position);
+  int buffer = num;
+  num = num << (POSITIONS - position);
+  num = num >> (POSITIONS);
+  int checkLsb = num & 1;
+  printf("The bit in position %d of number %d is: %d", position, buffer, checkLsb);
   return 0;
+
   // Set bit
   printf("\nSet bit:\n");
   /*Scan two integers (representing number and a position)
