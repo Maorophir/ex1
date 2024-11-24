@@ -1,6 +1,6 @@
 /******************
 Name:Maor Ophir
-ID:315144063
+ID:
 Assignment:1
 *******************/
 #include <stdio.h>
